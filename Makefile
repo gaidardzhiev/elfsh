@@ -1,11 +1,11 @@
 CC=gcc
 CFLAGS=-O2 -Wall -Wextra -std=c11
 LDFLAGS=-no-pie
-BIN=sh2elf
+BIN=elfsh
 
 all: $(BIN)
 
-$(BIN): sh2elf.c
+$(BIN): elfsh.c
 	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
 
 strip:

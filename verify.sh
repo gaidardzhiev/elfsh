@@ -11,7 +11,7 @@ ARCH=$(uname -m)
 	exit 1;
 }
 
-[ ! -f sh2elf ] && { 
+[ ! -f elfsh ] && { 
 	make;
 	printf "\n";
 }
@@ -21,7 +21,7 @@ fprint() {
 }
 
 fhello() {
-	./sh2elf scripts/hello.sh -o hello.elf >/dev/null
+	./elfsh hello.sh -o hello.elf >/dev/null
 	CAPTURE=$(./hello.elf)
 	EXPECTED="Hello World!"
 	[ "${CAPTURE}" = "${EXPECTED}" ] && {
@@ -34,7 +34,7 @@ fhello() {
 }
 
 fpipe() {
-	./sh2elf scripts/pipeline.sh -o pipe.elf >/dev/null
+	./elfsh pipeline.sh -o pipe.elf >/dev/null
 	CAPTURE=$(./pipe.elf)
 	EXPECTED="20"
 	[ "${CAPTURE}" = "${EXPECTED}" ] && {
@@ -47,7 +47,7 @@ fpipe() {
 }
 
 flogic() {
-	./sh2elf scripts/logic.sh -o logic.elf >/dev/null
+	./elfsh logic.sh -o logic.elf >/dev/null
 	CAPTURE=$(./logic.elf)
 	EXPECTED=$(cat <<'EOF'
 first
