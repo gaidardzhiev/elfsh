@@ -247,7 +247,7 @@ ${PROG}: ${PROG}.c
 ###############
 #
 clean:
-	${RM} -f ${OBJ} ${ALT_OBJ}
+	${RM} -f ${OBJ} ${ALT_OBJ} *.elf
 
 clobber: clean
 	@# XXX - put additional ${RM} -f or ${RM} -rf lines so that
