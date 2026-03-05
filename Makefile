@@ -42,7 +42,7 @@ TRUE= true
 #
 # Example: CSILENCE= -Wno-int-conversion
 #
-CSILENCE= -Wno-poison-system-directories -Wno-unsafe-buffer-usage -Wno-overriding-deployment-version -Wno-missing-field-initializers -Wno-multistatement-macros -Wno-unused-variable
+CSILENCE= -Wno-poison-system-directories -Wno-unsafe-buffer-usage -Wno-overriding-deployment-version -Wno-missing-field-initializers -Wno-multistatement-macros -Wno-unused-variable -Wno-array-bounds -Wno-stringop-overread
 
 # Attempt to silence unknown warning options
 #
