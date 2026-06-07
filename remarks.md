@@ -31,7 +31,7 @@ make clobber
 
 make
 
-./prog hello.sh -o hello.elf
+./elfsh hello.sh -o hello.elf
 
 ./hello.elf 
 Hello World!

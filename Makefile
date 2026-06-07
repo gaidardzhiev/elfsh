@@ -29,7 +29,7 @@ ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
 CSILENCE+=
 CWARN+=
 endif
-PROG= prog
+PROG= elfsh
 OBJ= ${PROG}.o
 TARGET= ${PROG}
 DATA=
@@ -41,8 +41,6 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
-
-	@${TRUE}
 
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ} *.elf

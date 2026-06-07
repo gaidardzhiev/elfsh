@@ -11,8 +11,8 @@ ARCH=$(uname -m)
 	exit 1;
 }
 
-[ ! -f prog ] && { 
-	printf "prog not found, attempting to build with make...\n";
+[ ! -f elfsh ] && { 
+	printf "elfsh not found, attempting to build with make...\n";
 	make;
 	printf "make finished, continuing with tests.\n\n";
 }
@@ -23,7 +23,7 @@ fprint() {
 
 fhello() {
 	printf "\nrunning Hello World test: compiling hello.sh to hello.elf\n"
-	./prog hello.sh -o hello.elf >/dev/null
+	./elfsh hello.sh -o hello.elf >/dev/null
 	printf "executing hello.elf and capturing output...\n"
 	CAPTURE=$(./hello.elf)
 	EXPECTED="Hello World!"
@@ -41,7 +41,7 @@ fhello() {
 
 fpipe() {
 	printf "\nrunning Pipeline test: compiling pipeline.sh to pipe.elf\n"
-	./prog pipeline.sh -o pipe.elf >/dev/null
+	./elfsh pipeline.sh -o pipe.elf >/dev/null
 	printf "executing pipe.elf and capturing output...\n"
 	CAPTURE=$(./pipe.elf)
 	EXPECTED="20"
@@ -59,7 +59,7 @@ fpipe() {
 
 flogic() {
 	printf "\nrunning Logic test: compiling logic.sh to logic.elf\n"
-	./prog logic.sh -o logic.elf >/dev/null
+	./elfsh logic.sh -o logic.elf >/dev/null
 	printf "executing logic.elf and capturing multiline output...\n"
 	CAPTURE=$(./logic.elf)
 	EXPECTED=$(cat <<'EOF'
